@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Quote extends Model {
     /**
@@ -15,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   Quote.init({
     title: DataTypes.STRING,
-    content: DataTypes.TEXT
+    content: DataTypes.TEXT,
+    userId: DataTypes.INTEGER
 
   }, {
     sequelize,

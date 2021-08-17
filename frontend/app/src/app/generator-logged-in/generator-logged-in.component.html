@@ -1,8 +1,16 @@
-<p>Welcome</p>
+<p>Welcome {{name}}</p>
+
 <div class="container">
     <img src="assets/frr.jpg" alt="wrapper">
     <button class="btn" (click)="randomQuote()">Generate quote</button>
-    <div class="card-text">
-       {{quote?.content}}
+  <div class="card-text">
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title mb-2 text-muted">{{quote.title}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{quote.content}}</h6>
+      <h6 class="card-creator mb-2 text-muted">{{quote.userId}}</h6>
     </div>
+  </div>
+  </div>
 </div>

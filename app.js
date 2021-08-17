@@ -13,7 +13,7 @@ app.use(cors({
 
 app.use(express.json());
 
-app.use("/quote", quoteRoute);
+app.use("/user/quote", quoteRoute);
 app.use("/user", userRoute);
 
 db.sequelize.sync().then((req) => {

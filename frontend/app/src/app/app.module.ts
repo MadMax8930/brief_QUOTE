@@ -17,6 +17,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { GeneratorComponent } from './generator/generator.component';
 import { GeneratorLoggedInComponent } from './generator-logged-in/generator-logged-in.component';
 import { NavbarLoggedInComponent } from './navbar-logged-in/navbar-logged-in.component';
+import { ProfilComponent } from './profil/profil.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { NavbarLoggedInComponent } from './navbar-logged-in/navbar-logged-in.com
     AddquoteComponent,
     GeneratorComponent,
     GeneratorLoggedInComponent,
-    NavbarLoggedInComponent
+    NavbarLoggedInComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,38 @@
+
+body{
+    background-image: url("/assets/fr2.jpg");
+    background-size: cover;
+    overflow: hidden;
+   
+}
+.add-quote .panel-default{
+    padding: 28%;
+    margin-top: -27%;
+    overflow: hidden;
+   
+}
+.add-quote .panel-body{
+    padding: 15%;
+    margin-bottom: -50%;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+img{
+    width:45%;
+    margin-bottom:10%;
+}
+.btnAdd{
+    background: #ff4939;
+    border:none;
+}
+
+.btn-secondary:hover {
+    background-color: rgb(51, 54, 49);
+    border:none;
+}
+
+.inputfield {
+    height: 65px
+  }
+

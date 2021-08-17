@@ -1,11 +1,71 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+
+<body>
+<div class="container add-quote">
+            <div class="row">
+                <div class="col-md-12 col-md-offset-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/P_philosophy.svg/1200px-P_philosophy.svg.png" alt="philo" border="0">
+                                <h2 class="text-center">Feeling Philosophical?</h2>
+                                <p>It's the moment to tell the world what is on your mind.</p>
+
+                                <div *ngIf="alert" class="alert alert-success success-dismissible fade show" role="alert">
+                                  <strong>Succes!</strong> Quote has been created!
+                                  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+
+                                <form (ngSubmit)="submitQuote()" [formGroup]="quoteForm" class="form" method="post">
+                                
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input id="quote" formControlName="content" placeholder="quote" class="form-control inputfield" type="text" name="content" aria-label="quote" aria-describedby="quote-addon">
+                                            <span class="input-group-text" id="quote-addon"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input id="title" formControlName="title"  placeholder="by" class="form-control" type="text" name="title" aria-label="by" aria-describedby="by-addon">
+                                            <span class="input-group-text" id="by-addon"></span>               
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input name="btnAdd" type="submit" [disabled]="quoteForm.invalid" class="btn btn-lg btn-primary btn-block btnAdd" value="Add quote">
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-lg btn-secondary btn-block" routerLink="/home/">Home</button>
+                                    </div>
+                                    <p>All created quotes are visible from your <a href="/account">account</a></p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </body>
+
+
+<!-- 
 <form (ngSubmit)="submitQuote()" [formGroup]="quoteForm">
 
-    <label for="content">Your Quote: </label>
-    <input id="content" type="text" formControlName="content">
-  
-    <label for="title">Created by: </label>
-    <input id="title" type="text" formControlName="title">
+  <label for="content">Your Quote: </label>
+  <input id="content" type="text" formControlName="content">
 
-    <button type="submit" class="btn btn-primary" [disabled]="quoteForm.invalid">Add quote</button>
-  
-  </form>
+  <label for="title">Created by: </label>
+  <input id="title" type="text" formControlName="title">
+
+  <button class="btn btn-primary" type="submit" [disabled]="quoteForm.invalid">Add quote</button>
+  <button class="btn btn-secondary" routerLink="/home/">Home</button>
+
+</form>
+ -->

@@ -25,8 +25,10 @@ export class AuthService {
     .pipe(
       map(
         (resp: any) => {
+          console.log(resp);        
           localStorage.setItem('TOKEN_APPLI', resp.token);
-          localStorage.setItem('name', resp.name);
+          localStorage.setItem('USER_ID', resp.decodedUser);
+          
           console.log('Token Save');
           return resp;
         }
@@ -34,22 +36,18 @@ export class AuthService {
     )
   }
 
-  getName(){
-    const name = localStorage.getItem('name');
-    if (name) {
-      return name;
-    } else {
-      return null;
-    }
-  }
-
-  
-
-
   logout() {
     localStorage.removeItem('TOKEN_APPLI');
-    localStorage.removeItem('name');
+    localStorage.removeItem('USER_ID');
     this.router.navigate(["/"]);
   }
 
+   getName(){
+     const name = localStorage.getItem('name');
+     if (name) {
+       return name;
+     } else {
+       return null;
+     }
+   }
 }

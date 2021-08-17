@@ -10,13 +10,18 @@ import { Router } from '@angular/router';
 export class GenquoteComponent implements OnInit {
 
   constructor(private quoteService: QuoteService, private router: Router) { }
-  quote : any;
+  
+  quote : {
+    title: string,
+    content: string,
+    userId: number
+  };
 
   ngOnInit(): void {
   }
 
   randomQuote(){
-    this.quoteService.getQuote()
+    this.quoteService.findRandom(this.quote)
     .subscribe((quote) => {
       console.log(quote);
       this.quote = quote

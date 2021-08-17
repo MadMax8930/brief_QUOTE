@@ -1,0 +1,18 @@
+<table border="1">
+        
+    <tr>
+        <th>Quote Title</th>
+        <th>Quote Structure</th>
+        <th>Creator</th>
+    </tr>
+    
+    <tr *ngFor = "let quote of quotes">
+        <td>{{quote.content}}</td>
+        <td>{{quote.title}}</td>
+        <td>{{quote.userId}}</td>
+        <td><button class="btn btn-primary" (click)="updateOnClick()">Update</button></td>
+        <td><button class="btn btn-danger" (click)="deleteOnClick()">Delete</button></td>
+        <td><a href="/quote"><button class="btn btn-warning">Add</button></a></td>
+    </tr>
+
+</table>

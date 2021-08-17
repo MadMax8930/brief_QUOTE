@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AddquoteComponent implements OnInit {
 
+  alert: boolean = false;
 
   quoteForm = new FormGroup({
 
@@ -29,19 +30,23 @@ export class AddquoteComponent implements OnInit {
     this.quoteForm = this.formBuilder.group({
     content: this.formBuilder.control(""),
     title: this.formBuilder.control(""),
-    UserId: this.formBuilder.control("")
+    userId: this.formBuilder.control("")
     })
     
   }
 
-
   submitQuote() {
     const formValues = this.quoteForm.value;
-    this.quoteService.save(formValues)
+    this.quoteService.createQuote(formValues)
     .subscribe((response) => {
       console.log('Quote created successfully!');
       console.log(response);
-      });
+      this.alert = true
+      this.quoteForm.reset({});
+      })
   }
 
+  closeAlert() {
+    this.alert = false;
+  }
 }

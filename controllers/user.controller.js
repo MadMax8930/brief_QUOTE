@@ -83,22 +83,23 @@ function login(req, res) {
     });
 }
 
-//////////////logout////////////
+function showById(req, res) {
 
-// function logout(req, res) {
+    const id = req.params.id;
 
-//  .prototype.logoutUser = function(req, res, callback){
-//     var sess = req.session.user;
-//     if(sess){
-//         req.session.user = null;
-//         return callback(null, {'success': true, "message": "user logout successfully"});
-//     }
-//     callback(null, {'success': true, "message": "user logout successfully"});
-// }
+    models.User.findByPk(id).then(result => {
+        res.status(200).json(result);
+    }).catch(error => {
+        res.status(500).json({
+            message: "Something went wrong!"
+        });
+    });
+}
 
 //////////////exports////////////
 
 module.exports = {
     signUp: signUp,
     login: login,
+    showById: showById
 }
